@@ -185,105 +185,49 @@ Procedure fileReaderAndParser()
     If ReadFile(0, files_list())
       
     ; ---------- ACUMULADORES ---------------------------------------------------------
-    counter_incidentPage_create.i = 0
-    counter_incidentPage_createEndUser.i = 0
-    
-    counter_catalogPage_createCategory.i = 0
-    counter_catalogPage_deleteCategory.i = 0
-    
-    counter_usersPage_create.i = 0
-    counter_usersPage_delete.i = 0
-    
-    counter_helpDeskPage_createHelpDesk.i = 0
-    counter_helpDeskPage_deleteHelpDesk.i = 0
-    
-    counter_workflowsPage_import.i = 0
-    counter_workflowsPage_clickEditBotton.i = 0
-    
-    counter_reportsPage_goToUrl.i = 0
-    counter_reportsPage_setCategoryAsFilter = 0
-    
-    counter_requestReplyAndSolutionPage_replyRequest.i = 0
-    counter_requestReplyAndSolutionPage_solve.i = 0
-    
-    counter_requestAssignPage_reassign.i = 0
-    counter_requestAssignPage_addWatcherToRequest.i = 0
-    
-    counter_requestActionPage_duplicateIncident.i = 0
-    counter_requestActionPage_setWaitingFor.i = 0
-    counter_requestActionPage_setWaitingForDate.i = 0
-    
-    counter_knowledgePage_create.i = 0
-    
-    counter_assetManagementPage_integrationExist.i = 0
-    
-    counter_customizationPage_createField.i = 0
-    
+      NewMap counters_map.i()
+      counters_map("incidentPage_create") = 0
+      
+      counters_map("incidentPage_create") = 0
+      counters_map("incidentPage_createEndUser") = 0
+      
+      counters_map("catalogPage_createCategory") = 0
+      counters_map("catalogPage_deleteCategory") = 0
+      
+      counters_map("usersPage_create") = 0
+      counters_map("usersPage_delete") = 0
+      
+      counters_map("helpDeskPage_createHelpDesk") = 0
+      counters_map("helpDeskPage_deleteHelpDesk") = 0
+      
+      counters_map("workflowsPage_import") = 0
+      counters_map("workflowsPage_clickEditBotton") = 0
+      
+      counters_map("reportsPage_goToUrl") = 0
+      counters_map("reportsPage_setCategoryAsFilter") = 0
+      
+      counters_map("requestReplyAndSolutionPage_replyRequest") = 0
+      counters_map("requestReplyAndSolutionPage_solve") = 0
+      
+      counters_map("requestAssignPage_reassign") = 0
+      counters_map("requestAssignPage_addWatcherToRequest") = 0
+      
+      counters_map("requestActionPage_duplicateIncident") = 0
+      counters_map("requestActionPage_setWaitingFor") = 0
+      counters_map("requestActionPage_setWaitingForDate") = 0
+      
+      counters_map("knowledgePage_create") = 0
+      
+      counters_map("assetManagementPage_integrationExist") = 0
+      
+      counters_map("customizationPage_createField") = 0
+      
       While Eof(0) = 0
         current_line.s = ReadString(0)     
         ForEach this_file_methods_map()
           If FindString(current_line, this_file_methods_map())
             key.s = MapKey(this_file_methods_map())
-            Select key
-              Case "incidentPage_create"
-                counter_incidentPage_create = counter_incidentPage_create + 1
-              Case "incidentPage_createEndUser"
-                counter_incidentPage_createEndUser = counter_incidentPage_createEndUser + 1
-                
-              Case "catalogPage_createCategory"
-                counter_catalogPage_createCategory = counter_catalogPage_createCategory + 1
-              Case "catalogPage_deleteCategory"
-                counter_catalogPage_deleteCategory = counter_catalogPage_deleteCategory + 1
-                
-              Case "usersPage_create"
-                counter_usersPage_create = counter_usersPage_create + 1
-              Case "usersPage_delete"
-                counter_usersPage_delete = counter_usersPage_delete + 1
-                
-              Case "helpDeskPage_createHelpDesk"
-                counter_helpDeskPage_createHelpDesk = counter_helpDeskPage_createHelpDesk + 1
-              Case "helpDeskPage_deleteHelpDesk"
-                counter_helpDeskPage_deleteHelpDesk = counter_helpDeskPage_deleteHelpDesk + 1
-                
-              Case "workflowsPage_import"
-                counter_workflowsPage_import = counter_workflowsPage_import + 1
-              Case "workflowsPage_clickEditBotton"
-                counter_workflowsPage_clickEditBotton = counter_workflowsPage_clickEditBotton + 1
-                
-              Case "reportsPage_goToUrl"
-                counter_reportsPage_goToUrl = counter_reportsPage_goToUrl + 1
-              Case "reportsPage_setCategoryAsFilter"
-                counter_reportsPage_setCategoryAsFilter = counter_reportsPage_setCategoryAsFilter + 1
-                
-              Case "requestReplyAndSolutionPage_replyRequest"
-                counter_requestReplyAndSolutionPage_replyRequest = counter_requestReplyAndSolutionPage_replyRequest + 1
-              Case "requestReplyAndSolutionPage_solve"
-                counter_requestReplyAndSolutionPage_solve = counter_requestReplyAndSolutionPage_solve + 1
-                
-              Case "requestAssignPage_reassign"
-                counter_requestAssignPage_reassign = counter_requestAssignPage_reassign + 1
-              Case "requestAssignPage_addWatcherToRequest"
-                counter_requestAssignPage_addWatcherToRequest = counter_requestAssignPage_addWatcherToRequest + 1
-                
-              Case "requestActionPage_duplicateIncident"
-                counter_requestActionPage_duplicateIncident = counter_requestActionPage_duplicateIncident + 1
-              Case "requestActionPage_setWaitingFor"
-                counter_requestActionPage_setWaitingFor = counter_requestActionPage_setWaitingFor + 1
-              Case "requestActionPage_setWaitingForDate"
-                counter_requestActionPage_setWaitingForDate = counter_requestActionPage_setWaitingForDate + 1
-                
-              Case "knowledgePage_create"
-                counter_knowledgePage_create = counter_knowledgePage_create + 1
-                
-              Case "assetManagementPage_integrationExist"
-                counter_assetManagementPage_integrationExist = counter_assetManagementPage_integrationExist + 1
-                
-              Case "customizationPage_createField"
-                counter_customizationPage_createField = counter_customizationPage_createField + 1
-                
-              Default
-                PrintN("error sumando acumulador")
-            EndSelect
+            counters_map(key) = counters_map(key) + 1
           EndIf
         Next        
       Wend
@@ -298,39 +242,39 @@ Procedure fileReaderAndParser()
         
         WriteString(0, "Describe: " + describe$ + ";")
         
-        WriteString(0, "Tickets creados: " + counter_incidentPage_create + ";")
-        WriteString(0, "Tickets creados por end users: " + counter_incidentPage_createEndUser + ";")
+        WriteString(0, "Tickets creados: " + counters_map("incidentPage_create") + ";")
+        WriteString(0, "Tickets creados por end users: " + counters_map("incidentPage_createEndUser") + ";")
         
-        WriteString(0, "Categorias creadas: " + counter_catalogPage_createCategory + ";")
-        WriteString(0, "Categorias borradas: " + counter_catalogPage_deleteCategory + ";")
+        WriteString(0, "Categorias creadas: " + counters_map("catalogPage_createCategory") + ";")
+        WriteString(0, "Categorias borradas: " + counters_map("catalogPage_deleteCategory") + ";")
         
-        WriteString(0, "Usuarios creados: " + counter_usersPage_create + ";")
-        WriteString(0, "Usuarios borrados: " + counter_usersPage_delete + ";")
+        WriteString(0, "Usuarios creados: " + counters_map("usersPage_create") + ";")
+        WriteString(0, "Usuarios borrados: " + counters_map("usersPage_delete") + ";")
         
-        WriteString(0, "Help desks creados: " + counter_helpDeskPage_createHelpDesk + ";")
-        WriteString(0, "Help desks borrados: " + counter_helpDeskPage_deleteHelpDesk + ";")
+        WriteString(0, "Help desks creados: " + counters_map("helpDeskPage_createHelpDesk") + ";")
+        WriteString(0, "Help desks borrados: " + counters_map("helpDeskPage_deleteHelpDesk") + ";")
         
-        WriteString(0, "Workflows importados: " + counter_workflowsPage_import + ";")
-        WriteString(0, "Clicks en editar workflow: " + counter_workflowsPage_clickEditBotton + ";")
+        WriteString(0, "Workflows importados: " + counters_map("workflowsPage_import") + ";")
+        WriteString(0, "Clicks en editar workflow: " + counters_map("workflowsPage_clickEditBotton") + ";")
         
-        WriteString(0, "Veces que fue a reportes: " + counter_reportsPage_goToUrl + ";")
-        WriteString(0, "Veces que setteo categoria como flitro en reportes: " + counter_reportsPage_setCategoryAsFilter + ";")
+        WriteString(0, "Veces que fue a reportes: " + counters_map("reportsPage_goToUrl") + ";")
+        WriteString(0, "Veces que setteo categoria como flitro en reportes: " + counters_map("reportsPage_setCategoryAsFilter") + ";")
         
-        WriteString(0, "Replies en tickets: " + counter_requestReplyAndSolutionPage_replyRequest + ";")
-        WriteString(0, "Tickets solucionados: " + counter_requestReplyAndSolutionPage_solve + ";")
+        WriteString(0, "Replies en tickets: " + counters_map("requestReplyAndSolutionPage_replyRequest") + ";")
+        WriteString(0, "Tickets solucionados: " + counters_map("requestReplyAndSolutionPage_solve") + ";")
         
-        WriteString(0, "Reasignaciones de tickets: " + counter_requestAssignPage_reassign + ";")
-        WriteString(0, "Watchers agregados a tickets: " + counter_requestAssignPage_addWatcherToRequest + ";")
+        WriteString(0, "Reasignaciones de tickets: " + counters_map("requestAssignPage_reassign") + ";")
+        WriteString(0, "Watchers agregados a tickets: " + counters_map("requestAssignPage_addWatcherToRequest") + ";")
         
-        WriteString(0, "Veces que se duplicaron tickets: " + counter_requestActionPage_duplicateIncident + ";")
-        WriteString(0, "Veces que se cambio el waiting status de tickets: " + counter_requestActionPage_setWaitingFor + ";")
-        WriteString(0, "Veces que se dejo un ticket esperando por fecha: " + counter_requestActionPage_setWaitingForDate + ";")
+        WriteString(0, "Veces que se duplicaron tickets: " + counters_map("requestActionPage_duplicateIncident") + ";")
+        WriteString(0, "Veces que se cambio el waiting status de tickets: " + counters_map("requestActionPage_setWaitingFor") + ";")
+        WriteString(0, "Veces que se dejo un ticket esperando por fecha: " + counters_map("requestActionPage_setWaitingForDate") + ";")
         
-        WriteString(0, "Articulos de Knowledge Base creados: " + counter_knowledgePage_create + ";")
+        WriteString(0, "Articulos de Knowledge Base creados: " + counters_map("knowledgePage_create") + ";")
         
-        WriteString(0, "Veces que se valido integracion con Insight: " + counter_assetManagementPage_integrationExist + ";")
+        WriteString(0, "Veces que se valido integracion con Insight: " + counters_map("assetManagementPage_integrationExist") + ";")
         
-        WriteString(0, "Custom fields creados: " + counter_customizationPage_createField + ";")
+        WriteString(0, "Custom fields creados: " + counters_map("customizationPage_createField") + ";")
         
         CloseFile(0)
       EndIf
@@ -363,8 +307,8 @@ fileReaderAndParser()
 PrintN("All done, check output file")
 exitProgramConfirmation()
 ; IDE Options = PureBasic 6.00 LTS (Windows - x64)
-; CursorPosition = 353
-; FirstLine = 313
+; CursorPosition = 197
+; FirstLine = 234
 ; Folding = -
 ; EnableXP
 ; DPIAware
