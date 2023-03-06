@@ -351,7 +351,7 @@ EndProcedure
 OpenConsole()
 
 If CreateFile(0, name_output_file)
-  WriteStringN(0, "Github link: ; https://github.com/narmuzz/SD_Automation-Tests_describe_keywords_printer ;")
+  WriteStringN(0, "Github link; https://github.com/narmuzz/SD_Automation-Tests_describe_keywords_printer ;")
   PrintN("Output created: " + name_output_file)
 Else
   PrintN("Error creating output")
@@ -363,8 +363,8 @@ fileReaderAndParser()
 PrintN("All done, check output file")
 exitProgramConfirmation()
 ; IDE Options = PureBasic 6.00 LTS (Windows - x64)
-; CursorPosition = 77
-; FirstLine = 51
+; CursorPosition = 353
+; FirstLine = 313
 ; Folding = -
 ; EnableXP
 ; DPIAware

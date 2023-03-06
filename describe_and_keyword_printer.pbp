@@ -7,12 +7,12 @@
   <section name="data">
     <explorer view="..\..\..\ProgramData\PureBasic\Examples\" pattern="0"/>
     <log show="1"/>
-    <lastopen date="2023-03-06 17:17" user="Nahuel" host="DESKTOP-CRRH9TG"/>
+    <lastopen date="2023-03-06 19:04" user="Nahuel" host="DESKTOP-CRRH9TG"/>
   </section>
   <section name="files">
     <file name="describe_and_keywords_printer.pb">
       <config load="0" scan="1" panel="1" warn="1" lastopen="1" panelstate="+"/>
-      <fingerprint md5="31cf4501ea8b0c5540bc8238e59e7090"/>
+      <fingerprint md5="0535c9312e6a399008c3d67a11b789bf"/>
     </file>
   </section>
   <section name="targets">
