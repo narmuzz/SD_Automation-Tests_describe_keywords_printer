@@ -1,0 +1,1 @@
+Ir a la carpeta raíz donde están las carpetas con los demás tests y en la barra de búsqueda pone "*". Copiar todos los tests y pegarlos acá

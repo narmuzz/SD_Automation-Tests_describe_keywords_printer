@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://www.purebasic.com/namespace" version="1.0" creator="PureBasic 6.00 LTS (Windows - x64)">
+  <section name="config">
+    <options closefiles="1" openmode="0" name="SD Automation - describe and keyword printer"/>
+  </section>
+  <section name="data">
+    <explorer view="..\..\..\ProgramData\PureBasic\Examples\" pattern="0"/>
+    <log show="1"/>
+    <lastopen date="2023-03-06 17:17" user="Nahuel" host="DESKTOP-CRRH9TG"/>
+  </section>
+  <section name="files">
+    <file name="describe_and_keywords_printer.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" panelstate="+"/>
+      <fingerprint md5="31cf4501ea8b0c5540bc8238e59e7090"/>
+    </file>
+  </section>
+  <section name="targets">
+    <target name="Default Target" enabled="1" default="1">
+      <inputfile value="describe_and_keywords_printer.pb"/>
+      <outputfile value="describe_and_keywords_printer.exe"/>
+      <compiler version="PureBasic 6.00 LTS (Windows - x64)"/>
+      <executable value="describe_and_keywords_printer.exe"/>
+      <options xpskin="1" dpiaware="1" optimizer="0"/>
+    </target>
+  </section>
+</project>
